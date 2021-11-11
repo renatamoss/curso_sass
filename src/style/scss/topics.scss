@@ -1,0 +1,29 @@
+.topics {
+  color: $color-light;
+  padding: 2rem;
+
+  &__list {
+    //Aplicação do exemplo Mixin:
+    @include reset-list;
+  }
+
+  &__item {
+    list-style: circle;
+    padding: .2rem;
+
+    //Aplicação do Exemplo de if/else:
+    @include theme-background($background: false);
+    &.topics__background {
+      @include theme-background($background: true);
+    }
+
+    &:not(:last-child) {
+      //todos tem a border, menos o last-child:
+      border-bottom: 1px dashed $color-dark;
+    }
+
+    &:hover {
+      color: $color-dark;
+    }
+  }
+}

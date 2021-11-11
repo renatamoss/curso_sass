@@ -1,0 +1,36 @@
+.img {
+  background-color: $color-light;
+  border-radius: 2rem;
+  padding: 2rem;
+  height: 100%;
+
+  ///Exemplo MIXIN com parâmetros: display
+  @include display(justify-content, center);
+
+  //Exemplo de Interpolação: variável + calculo css
+  width: calc(900px - #{$size-img});
+
+  //Exemplo MIXIN com parâmetros:media queries
+  @include for-phone {
+    width: calc(600px - #{$size-img});
+  }
+
+  &__logo {
+    width: 200px;
+
+    //Exemplo MIXIN com parâmetros:media queries
+    @include for-phone {
+      width: 100px;
+    }
+  }
+
+  &__glass {
+    width: 400px;
+
+    ///Exemplo MIXIN com parâmetros:media queries
+    @include for-phone {
+      width: 200px;
+    }
+  }
+
+}

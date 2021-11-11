@@ -1,0 +1,29 @@
+.banner {
+  background-color: $color-floral;
+  border-radius: 1rem;
+  color: $color-dark;
+  padding: 1rem;
+
+  &__title {
+    color: $color-violet;
+
+    //Aplicação do exemplo de PLACEHOLDER SELECTOR (%) e Extend:
+    padding: 1rem 0;
+    @extend %no-decoration;
+
+    &:hover {
+      @extend %yes-decoration;
+    }
+
+    //Aplicação do exemplo de FUNCTION:
+    @include fontSize(32px);
+
+    //Exemplo EACH:tirando a margin-bottom do title
+    @extend %no-margin-bottom;
+
+  }
+
+  &__text {
+    color: $color-dark;
+  }
+}

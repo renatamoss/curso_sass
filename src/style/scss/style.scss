@@ -1,0 +1,95 @@
+/*Comentário no sass para ser compilado no css deve ser com asterisco ponto*/
+// Este comentário não será compilado no css 
+/// Documentário com três barras se refere a documentações
+
+
+//1- VARIÁVEIS:
+$color-light: #b3b3b3;
+$color-dark: #000000;
+$color-floral: #ffe7f1;
+$color-violet: #cf649a;
+$size-img: 300px;
+
+//2 - PLACEHOLDER SELECTOR (%) e Extend: Aplicação exemplo no banner:
+%no-decoration {
+  text-decoration: none;
+}
+
+%yes-decoration {
+  text-decoration: underline;
+}
+
+//3- MIXIN: Aplicação exemplo no topics:
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+}
+
+// MIXIN com parâmetros: Aplicação exemplo no img:
+@mixin display($property, $just-cont) {
+  display: flex;
+  #{$property}: $just-cont;
+}
+
+// MIXIN para responsividade: Aplicação exemplo no img:
+@mixin for-phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+//4- FUNCTION: Aplicação exemplo no banner:
+@function calculaRem($size) {
+  @return $size / 16px * 1rem;
+}
+
+@mixin fontSize($size) {
+  font-size: calculaRem(($size));
+}
+
+//5- EACH com placeholder selector: exemplo aplicado no banner:
+$directions: top,
+bottom,
+left,
+right;
+$layout-margin-size: 10px;
+
+@each $direction in $directions {
+
+  //placeholder selector:
+  %no-margin-#{$direction} {
+    margin-#{$direction}: 0;
+  }
+
+  %default-margin-#{$direction} {
+    margin-#{$direction}: $layout-margin-size;
+  }
+
+  %double-margin-#{$direction} {
+    margin-#{$direction}: $layout-margin-size * 2;
+  }
+}
+
+// IF/ELSE+  Values: Exemplo aplicado no topics
+$background-color: $color-floral;
+$background-none: none;
+
+@mixin theme-background($background: true) {
+  @if $background {
+    background-color: $background-color;
+  }
+
+  else {
+    background-color: $background-none;
+  }
+}
+
+//Style CSS:
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: left;
+  line-height: 2rem;
+  margin: 3rem;
+}
+
+@import 'banner', 'topics', 'img', 'footer';
