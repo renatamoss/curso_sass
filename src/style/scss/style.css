@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/*Comentário no sass para ser compilado no css deve ser com asterisco ponto*/
+.banner__title {
+  text-decoration: none;
+}
+
+.banner__title:hover {
+  text-decoration: underline;
+}
+
+.banner__title {
+  margin-bottom: 0;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: left;
+  line-height: 2rem;
+  margin: 3rem;
+}
+
+.banner {
+  background-color: #ffe7f1;
+  border-radius: 1rem;
+  color: #000000;
+  padding: 1rem;
+}
+.banner__title {
+  color: #cf649a;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+.banner__text {
+  color: #000000;
+}
+
+.topics {
+  color: #b3b3b3;
+  padding: 2rem;
+}
+.topics__list {
+  margin: 0;
+  padding: 0;
+}
+.topics__item {
+  list-style: circle;
+  padding: 0.2rem;
+}
+.topics__item else {
+  background-color: none;
+}
+.topics__item.topics__background {
+  background-color: #ffe7f1;
+}
+.topics__item.topics__background else {
+  background-color: none;
+}
+.topics__item:not(:last-child) {
+  border-bottom: 1px dashed #000000;
+}
+.topics__item:hover {
+  color: #000000;
+}
+
+.img {
+  background-color: #b3b3b3;
+  border-radius: 2rem;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: calc(900px - 300px);
+}
+@media (max-width: 768px) {
+  .img {
+    width: calc(600px - 300px);
+  }
+}
+.img__logo {
+  width: 200px;
+}
+@media (max-width: 768px) {
+  .img__logo {
+    width: 100px;
+  }
+}
+.img__glass {
+  width: 400px;
+}
+@media (max-width: 768px) {
+  .img__glass {
+    width: 200px;
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

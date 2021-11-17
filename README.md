@@ -6,17 +6,19 @@ npm install -g sass
 
 ```
 
-### Arquivo de compilação, que lê o Sass e transformar no CSS:
+### Configurando o VUE JS para o SASS:
 ```
-sass style.scss:style.css
+npm install node-sass sass-loader --save-dev
 ```
 
 ### Comando que assiste o código e compila automaticamente:
 ```
-sass --watch style.scss:style.css
+sass --watch scss/style.scss:css/style.css
 ```
 
-![img_sass]('./public/img/logo-sass.svg' )
+
+
+![img_sass](https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png)
 
 ### O que é SASS ?
 
